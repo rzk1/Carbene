@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=40
+#SBATCH --mem=MaxMemPerNode
+#SBATCH --account=def-rzk 
+#SBATCH --job-name=CH3OH-001
+#SBATCH --error=_CH3OH-001.stde
+#SBATCH --output=_CH3OH-001.stdo
+
+EXE=cp2k.popt
+workd=${SLURM_SUBMIT_DIR}
+cd $workd
+srun $EXE start.inp > $workd/start.out-001

@@ -1,0 +1,8 @@
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 672214 ON blg8434 CANCELLED AT 2019-05-15T04:11:32 ***
+slurmstepd: error: *** STEP 672214.0 ON blg8434 CANCELLED AT 2019-05-15T04:11:32 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          00000000034E315E  for__signal_handl     Unknown  Unknown
+libpthread-2.24.s  00002AB1E9258E90  Unknown               Unknown  Unknown
+libmkl_avx512.so   00002AB2095FFB9C  mkl_blas_avx512_d     Unknown  Unknown

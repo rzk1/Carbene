@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --time=08:00:00
+#SBATCH --nodes=2
+#SBATCH --tasks-per-node=40
+#SBATCH --mem=MaxMemPerNode
+#SBATCH --account=ctb-rzk 
+#SBATCH --job-name=GaN-001
+#SBATCH --error=_GaN-001.stde
+#SBATCH --output=_GaN-001.stdo
+
+EXE=cp2k.popt
+workd=${SLURM_SUBMIT_DIR}
+cd $workd
+srun $EXE start.inp > $workd/start.out-001

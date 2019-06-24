@@ -1,0 +1,31 @@
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 672739 ON blg8612 CANCELLED AT 2019-05-15T04:41:37 ***
+slurmstepd: error: *** STEP 672739.0 ON blg8612 CANCELLED AT 2019-05-15T04:41:37 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          00000000034E315E  for__signal_handl     Unknown  Unknown
+libpthread-2.24.s  00002B1B445A7E90  Unknown               Unknown  Unknown
+libmkl_avx512.so   00002B1B6953C8F4  mkl_blas_avx512_d     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          00000000034E315E  for__signal_handl     Unknown  Unknown
+libpthread-2.24.s  00002B0FCD5FDE90  Unknown               Unknown  Unknown
+libmkl_avx512.so   00002B0FF2AB95C3  mkl_blas_avx512_d     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          00000000034E315E  for__signal_handl     Unknown  Unknown
+libpthread-2.24.s  00002B5EED51AE90  Unknown               Unknown  Unknown
+cp2k.popt          0000000001066D58  Unknown               Unknown  Unknown
+cp2k.popt          00000000008B5162  Unknown               Unknown  Unknown
+cp2k.popt          00000000008B03E9  Unknown               Unknown  Unknown
+cp2k.popt          0000000000869643  Unknown               Unknown  Unknown
+cp2k.popt          000000000086C006  Unknown               Unknown  Unknown
+cp2k.popt          0000000000ED941F  Unknown               Unknown  Unknown
+cp2k.popt          0000000001433541  Unknown               Unknown  Unknown
+cp2k.popt          0000000001431921  Unknown               Unknown  Unknown
+cp2k.popt          000000000115CBF1  Unknown               Unknown  Unknown
+cp2k.popt          00000000006FA065  Unknown               Unknown  Unknown
+cp2k.popt          00000000006D60C5  Unknown               Unknown  Unknown
+cp2k.popt          000000000055F7EE  Unknown               Unknown  Unknown
+cp2k.popt          000000000042CB27  Unknown               Unknown  Unknown
+cp2k.popt          00000000004131D9  Unknown               Unknown  Unknown
