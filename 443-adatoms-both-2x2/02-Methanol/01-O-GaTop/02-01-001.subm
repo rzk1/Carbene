@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=04:00:00
+#SBATCH --time=12:00:00
 #SBATCH --nodes=2
 #SBATCH --tasks-per-node=40
 #SBATCH --mem=MaxMemPerNode
@@ -11,4 +11,4 @@
 EXE=cp2k.popt
 workd=${SLURM_SUBMIT_DIR}
 cd $workd
-srun $EXE start.inp > $workd/start.out-001
+srun $EXE start-02.inp > $workd/start-02.out-001

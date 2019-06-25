@@ -11,4 +11,4 @@
 EXE=cp2k.popt
 workd=${SLURM_SUBMIT_DIR}
 cd $workd
-srun $EXE start.inp > $workd/start.out-001
+srun $EXE start-01.inp > $workd/start-01.out-001
