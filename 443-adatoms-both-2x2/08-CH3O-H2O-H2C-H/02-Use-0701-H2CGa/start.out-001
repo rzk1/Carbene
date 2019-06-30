@@ -32546,3 +32546,95 @@
 
  ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):            -8504.658910339547219
 
+
+ --------  Informations at step =    54 ------------
+  Optimization Method        =                 BFGS
+  Total Energy               =     -8504.6589103395
+  Real energy change         =        -0.0539811208
+  Predicted change in energy =        -0.1823622913
+  Scaling factor             =         0.0126366199
+  Step size                  =         0.4724315332
+  Trust radius               =         0.4724315332
+  Decrease in energy         =                   NO
+  Used time                  =             1045.204
+
+  Convergence check :
+  Max. step size             =         0.4724315332
+  Conv. limit for step size  =         0.0030000000
+  Convergence in step size   =                   NO
+  RMS step size              =         0.0652519815
+  Conv. limit for RMS step   =         0.0015000000
+  Convergence in RMS step    =                   NO
+  Max. gradient              =         0.0666473497
+  Conv. limit for gradients  =         0.0004500000
+  Conv. for gradients        =                   NO
+  RMS gradient               =         0.0075636793
+  Conv. limit for RMS grad.  =         0.0003000000
+  Conv. for gradients        =                   NO
+ ---------------------------------------------------
+
+ --------------------------
+ OPTIMIZATION STEP:     55
+ --------------------------
+
+ Spin 1
+
+ Number of electrons:                                                        914
+ Number of occupied orbitals:                                                914
+ Number of molecular orbitals:                                               914
+
+ Spin 2
+
+ Number of electrons:                                                        914
+ Number of occupied orbitals:                                                914
+ Number of molecular orbitals:                                               914
+
+ Number of orbital functions:                                               3892
+ Number of independent orbital functions:                                   3892
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : CG                  : conjugate gradient
+  Preconditioner : FULL_ALL            : diagonalization, state selective
+  Precond_solver : DEFAULT
+  Line search    : 2PNT                : 2 energies, one gradient
+  stepsize       :    0.15000000                  energy_gap     :    0.08000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+     1 OT CG       0.15E+00   26.7     0.00120348     -8503.1847719161 -8.50E+03
+     2 OT LS       0.15E+00    6.9                    -8503.9331927863
+     3 OT CG       0.15E+00   15.7     0.00097484     -8503.9349719052 -7.50E-01
+     4 OT LS       0.17E+00    8.6                    -8504.4884061966
+     5 OT CG       0.17E+00   18.1     0.00051587     -8504.5027576752 -5.68E-01
+     6 OT LS       0.13E+00    8.4                    -8504.6081687114
+     7 OT CG       0.13E+00   18.6     0.00024862     -8504.6237951320 -1.21E-01
+     8 OT LS       0.13E+00    8.6                    -8504.6531488543
+     9 OT CG       0.13E+00   18.2     0.00015676     -8504.6532441030 -2.94E-02
+    10 OT LS       0.15E+00    8.7                    -8504.6658900417
