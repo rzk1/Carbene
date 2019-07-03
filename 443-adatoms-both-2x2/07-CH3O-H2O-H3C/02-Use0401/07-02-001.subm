@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --time=08:00:00
+#SBATCH --nodes=2
+#SBATCH --tasks-per-node=40
+#SBATCH --mem=MaxMemPerNode
+#SBATCH --account=ctb-rzk 
+#SBATCH --job-name=07-02-001
+#SBATCH --error=_07-02-001.stde
+#SBATCH --output=_07-02-001.stdo
+
+EXE=cp2k.popt
+workd=${SLURM_SUBMIT_DIR}
+cd $workd
+srun $EXE start.inp > $workd/start.out-001
