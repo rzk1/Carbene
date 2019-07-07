@@ -1,8 +1,99 @@
-#p
-
-i =      246, E =     -8504.7382560919
-
-0 1
+ # Version information for this restart file 
+ # current date 2019-05-25 04:55:27.575
+ # current working dir /lustre03/project/6004141/rzk/GaN-carbene/00-Surface/00-Preoptimization/443-capped
+ # Program compiled at                              Sun Apr  7 00:48:11 EDT 2019
+ # Program compiled on                          beluga2.int.ets1.calculquebec.ca
+ # Program compiled for                        Beluga-Linux-x86-64-intel-openmpi
+ # Source code revision number                                         svn:18619
+ &GLOBAL
+   PRINT_LEVEL  MEDIUM
+   PROJECT_NAME TEST
+   RUN_TYPE  GEO_OPT
+ &END GLOBAL
+ &MOTION
+   &GEO_OPT
+     MAX_ITER 500
+   &END GEO_OPT
+ &END MOTION
+ &FORCE_EVAL
+   METHOD  QS
+   STRESS_TENSOR  ANALYTICAL
+   &DFT
+     UKS  T
+     SURFACE_DIPOLE_CORRECTION  TRUE
+     SURF_DIP_DIR               Z
+     BASIS_SET_FILE_NAME BASIS_MOLOPT
+     POTENTIAL_FILE_NAME GTH_POTENTIALS
+     &SCF
+       MAX_SCF  80
+       EPS_SCF     5.0000000000000004E-06
+       &OT  T
+         PRECONDITIONER  FULL_ALL
+       &END OT
+       &OUTER_SCF  T
+         OPTIMIZER  NONE
+         EPS_SCF     5.0000000000000004E-06
+         MAX_SCF  4
+       &END OUTER_SCF
+       &PRINT
+         &RESTART  OFF
+           BACKUP_COPIES  1
+           &EACH
+             JUST_ENERGY  0
+             QS_SCF  0
+             MD  20
+           &END EACH
+         &END RESTART
+       &END PRINT
+     &END SCF
+     &QS
+       EPS_DEFAULT     1.0000000000000000E-14
+       METHOD  GPW
+     &END QS
+     &MGRID
+       NGRIDS  5
+       CUTOFF     1.2000000000000000E+03
+     &END MGRID
+     &XC
+       DENSITY_CUTOFF     1.0000000000000000E-10
+       GRADIENT_CUTOFF     1.0000000000000000E-10
+       TAU_CUTOFF     1.0000000000000000E-10
+       &XC_FUNCTIONAL  NO_SHORTCUT
+         &PBE  T
+         &END PBE
+       &END XC_FUNCTIONAL
+       &VDW_POTENTIAL
+         POTENTIAL_TYPE  PAIR_POTENTIAL
+         &PAIR_POTENTIAL
+           R_CUTOFF     1.0000000000000002E+01
+           TYPE  DFTD3
+           PARAMETER_FILE_NAME dftd3.dat
+           REFERENCE_FUNCTIONAL PBE
+           EPS_CN     9.9999999999999995E-07
+           CALCULATE_C9_TERM  T
+           REFERENCE_C9_TERM  T
+           LONG_RANGE_CORRECTION  F
+           VERBOSE_OUTPUT  F
+         &END PAIR_POTENTIAL
+       &END VDW_POTENTIAL
+     &END XC
+   &END DFT
+   &SUBSYS
+     &CELL
+       A     1.2864472766435110E+01    0.0000000000000000E+00    0.0000000000000000E+00
+       B    -6.4322363581020028E+00    1.1140960178524471E+01    0.0000000000000000E+00
+       #A     1.2982353780853531E+01    0.0000000000000000E+00    0.0000000000000000E+00
+       #B    -6.4911768904267628E+00    1.1243048175136114E+01    0.0000000000000000E+00
+       C     0.0000000000000000E+00    0.0000000000000000E+00    3.2000000000000000E+01
+       MULTIPLE_UNIT_CELL  1 1 1
+       &CELL_REF
+         A     1.2982353780853531E+01    0.0000000000000000E+00    0.0000000000000000E+00
+         B    -6.4911768904267628E+00    1.1243048175136114E+01    0.0000000000000000E+00
+         C     0.0000000000000000E+00    0.0000000000000000E+00    3.2000000000000000E+01
+         MULTIPLE_UNIT_CELL  1 1 1
+       &END CELL_REF
+     &END CELL
+     &COORD
  N                  0.07771888    1.97666071    2.48916387
  Ga                 0.06043959    0.00547397    2.82189841
  N                  0.08243612   -0.02581000    5.01472196
@@ -140,7 +231,7 @@ i =      246, E =     -8504.7382560919
  Ga                 3.28634857    5.54642803   13.86127215
  N                  3.28455407    5.54729880   16.06940292
  Ga                 3.29405803    7.60397029   16.49761971
- Ga                 3.33134375    9.27519604    1.32317819
+ Ga                 4.92838186    8.24102243    1.33574080
  N                  1.78444117   10.11744158    2.50604055
  Ga                 1.68058781    8.31282098    3.28938630
  N                  1.67393129    8.31682949    5.23828111
@@ -202,11 +293,48 @@ i =      246, E =     -8504.7382560919
  Ga                 4.89210140    8.33278777   13.62365552
  N                  4.92004381    8.30913180   15.58269325
  Ga                 4.73842084   10.08721806   16.49583481
+ O                  0.01055561    4.08902695   -0.42950963
+ H                 -0.18863459    5.87541600   -0.34220199
+ C                  1.12513116    3.63523914   -1.22067070
+ H                  2.09312138    3.93972746   -0.79023133
+ H                  1.11991608    2.53965293   -1.32692053
+ H                  1.03007106    4.08090360   -2.22101687
  Ga                 3.26580470    5.53463682    2.85184101
- O                  0.07695294    7.36854067    0.27694827
- H                  0.07880709    7.37306005    1.27213628
- C                  1.19255733    6.71527025   -0.34341776
- H                  2.10094411    7.25175855   -0.03622386
- H                  1.28519503    5.66435230   -0.02240188
- H                  1.12711746    6.74720587   -1.44174228
+ O                 -0.19040280    6.86063387   -0.19900121
+ H                  0.03108048    7.30913399    1.65931862
+ C                  0.93922708    7.39291218   -0.90384556
+ H                  0.95461148    8.47777445   -0.73008854
+ H                  1.88966348    6.96966012   -0.53834616
+ H                  0.86542955    7.21759806   -1.98802169
+     &END COORD
 
+     &KIND C
+       BASIS_SET DZVP-MOLOPT-SR-GTH-q4
+       POTENTIAL GTH-PBE-q4
+     &END KIND
+
+     &KIND O
+       BASIS_SET DZVP-MOLOPT-SR-GTH-q6
+       POTENTIAL GTH-PBE-q6
+     &END KIND
+
+     &KIND H
+       BASIS_SET DZVP-MOLOPT-SR-GTH-q1
+       POTENTIAL GTH-PBE-q1
+     &END KIND
+
+     &KIND N
+       BASIS_SET DZVP-MOLOPT-SR-GTH
+       POTENTIAL GTH-PBE-q5
+     &END KIND
+
+     &KIND Ga
+       BASIS_SET DZVP-MOLOPT-SR-GTH
+       POTENTIAL GTH-PBE-q13
+     &END KIND
+
+     &TOPOLOGY
+       MULTIPLE_UNIT_CELL  1 1 1
+     &END TOPOLOGY
+   &END SUBSYS
+ &END FORCE_EVAL
