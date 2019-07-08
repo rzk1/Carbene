@@ -7,7 +7,7 @@ atom2=4
 
 intI=0
 
-for idist in `seq 1.87 -0.1 0.90`
+for idist in `seq 1.90 -0.2 0.90`
 do
 
  dist=`printf "%04.2f" $idist`
@@ -22,7 +22,7 @@ do
   if [ "$intI" -eq "1" ]; then
     sed -e "s/_PR1_/$projName/g" -e "s/_A1_/$atom1/g" -e "s/_A2_/$atom2/g" -e "s/_D1_/$dist/g" $cp2kInp.templ > $cp2kInp.inp
   else
-    sed -e "s/_PR1_/$projName/g" -e "s/_D1_/$dist/g" delayed-action.templ > delayed-action-$strI.sh
+    sed -e "s/_PR1_/$projName/g" -e "s/_I1_/$strI/g" -e "s/_D1_/$dist/g" delayed-action.templ > delayed-action-$strI.sh
   fi
 
  elif [ $action == 2 ]
@@ -37,5 +37,5 @@ do
 
 done
 
-submit_cp2k.pl -1 40 40 -1 -1 00 15 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+submit_cp2k.pl -1 10 40 -1 -1 00 15 $projName $cp2kInp.inp $cp2kInp.out $strI 0
 

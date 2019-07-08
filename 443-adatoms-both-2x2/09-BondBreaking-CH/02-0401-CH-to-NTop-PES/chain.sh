@@ -22,7 +22,7 @@ do
   if [ "$intI" -eq "1" ]; then
    sed -e "s/_PR1_/$projName/g" -e "s/_A1_/$atom1/g" -e "s/_A2_/$atom2/g" -e "s/_D1_/$dist/g" $cp2kInp.templ > $cp2kInp.inp
   else
-   sed -e "s/_PR1_/$projName/g" -e "s/_D1_/$dist/g" delayed-action.templ > delayed-action-$strI.sh
+   sed -e "s/_PR1_/$projName/g" -e "s/_I1_/$strI/g" -e "s/_D1_/$dist/g" delayed-action.templ > delayed-action-$strI.sh
   fi
 
  elif [ $action == 2 ]
