@@ -4,8 +4,10 @@ cp2kInp='start'
 action=1 # 1-submit, 2-analyze
 atom1=127
 atom2=211
+natoms=212
 
 intI=0
+nlines=$((natoms+2))
 
 for idist in `seq 3.40 -0.2 0.80`
 do
@@ -22,16 +24,17 @@ do
   if [ "$intI" -eq "1" ]; then
    sed -e "s/_PR1_/$projName/g" -e "s/_A1_/$atom1/g" -e "s/_A2_/$atom2/g" -e "s/_D1_/$dist/g" $cp2kInp.templ > $cp2kInp.inp
   else
-   sed -e "s/_PR1_/$projName/g" -e "s/_I1_/$strI/g" -e "s/_D1_/$dist/g" delayed-action.templ > delayed-action-$strI.sh
+   sed -e "s/_PR1_/$projName/g" -e "s/_I1_/$strI/g" -e "s/_D1_/$dist/g" action-pre.templ > action-pre-$strI.sh
   fi
+  sed -e "s/_PR1_/$projName/g" -e "s/_I1_/$strI/g" -e "s/_N1_/$nlines/g" action-post.templ > action-post-$strI.sh
 
  elif [ $action == 2 ]
  then
 
-  dist=`tail -n 156 $jobID/TEST-pos-1.xyz | awk -v atom1="$atom1" -v atom2="$atom2" -f analysis.awk`
-  energy=`grep 'ENERGY|' $jobID/start.out-001 | tail -n 1 | awk '{print $9}'`
-  echo $dist $energy
-  tail -n 158 $jobID/$projName-pos-1.xyz >> $currentDir/profile.xyz
+  dist=`tail -n $natoms final-snapshot-$strI.xyz | awk -v atom1="$atom1" -v atom2="$atom2" -f analysis.awk`
+  energyCombined=`grep 'ENERGY|' $cp2kInp.out-$strI | tail -n 1 | awk '{print $9}'`
+  energyTrue=`grep 'Total energy:' $cp2kInp.out-$strI | tail -n 1 | awk '{print $3}'`
+  echo $dist $energyCombined $energyTrue
 
  fi
 

@@ -11,7 +11,10 @@
 EXE=cp2k.popt
 workd=${SLURM_SUBMIT_DIR}
 cd $workd
-if [ -f "delayed-action-006.sh" ]; then
- bash delayed-action-006.sh
+if [ -f "action-pre-006.sh" ]; then
+ bash action-pre-006.sh
 fi
 srun $EXE TEST-1.restart > $workd/start.out-006
+if [ -f "action-post-006.sh" ]; then
+ bash action-post-006.sh
+fi
