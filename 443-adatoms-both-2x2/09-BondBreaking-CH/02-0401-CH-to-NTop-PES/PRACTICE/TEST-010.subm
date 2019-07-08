@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --time=00:15:00
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=40
+#SBATCH --mem=MaxMemPerNode
+#SBATCH --account=ctb-rzk
+#SBATCH --job-name=TEST-010
+#SBATCH --error=_TEST-010.stde
+#SBATCH --output=_TEST-010.stdo
+
+EXE=cp2k.popt
+workd=${SLURM_SUBMIT_DIR}
+cd $workd
+if [ -f "delayed-action-010.sh" ]; then
+ bash delayed-action-010.sh
+fi
+srun $EXE TEST-1.restart > $workd/start.out-010
