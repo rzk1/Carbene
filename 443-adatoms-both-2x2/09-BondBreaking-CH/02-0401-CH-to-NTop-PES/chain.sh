@@ -16,11 +16,11 @@ do
  jobID=$dist
  intI=$((intI+1))
  strI=`printf "%03d" $intI`
- echo $dist $strI
 
  if [ $action == 1 ]
  then
 
+  echo $dist $strI
   if [ "$intI" -eq "1" ]; then
    sed -e "s/_PR1_/$projName/g" -e "s/_A1_/$atom1/g" -e "s/_A2_/$atom2/g" -e "s/_D1_/$dist/g" $cp2kInp.templ > $cp2kInp.inp
   else
@@ -40,5 +40,8 @@ do
 
 done
 
-submit_cp2k.pl -1 80 40 -1 -1 12 00 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+if [ $action == 1 ]
+then
+ submit_cp2k.pl -1 80 40 -1 -1 12 00 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+fi
 

@@ -1,7 +1,7 @@
 currentDir=`pwd`
 projName='TEST'
 cp2kInp='start'
-action=1 # 1-submit, 2-analyze
+action=2 # 1-submit, 2-analyze
 atom1=3
 atom2=4
 natoms=6
@@ -16,11 +16,11 @@ do
  jobID=$dist
  intI=$((intI+1))
  strI=`printf "%03d" $intI`
- echo $dist $strI
 
  if [ $action == 1 ]
  then
 
+  echo $dist $strI
   if [ "$intI" -eq "1" ]; then
    sed -e "s/_PR1_/$projName/g" -e "s/_A1_/$atom1/g" -e "s/_A2_/$atom2/g" -e "s/_D1_/$dist/g" $cp2kInp.templ > $cp2kInp.inp
   else
@@ -40,5 +40,8 @@ do
 
 done
 
-submit_cp2k.pl -1 10 40 -1 -1 00 15 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+if [ $action == 1 ]
+then
+ submit_cp2k.pl -1 10 40 -1 -1 00 15 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+fi
 

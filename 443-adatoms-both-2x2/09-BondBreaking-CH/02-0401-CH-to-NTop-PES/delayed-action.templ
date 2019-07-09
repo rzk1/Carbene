@@ -1,5 +1,0 @@
-sed -i'' -e 's/STEP_START_VAL/!STEP_START_VAL/g' -e 's/TARGET/TARGET [angstrom] _D1_ !/g' _PR1_-1.restart
-sed -i'' -e '/&COLVAR_RESTART/,/&END COLVAR_RESTART/d' _PR1_-1.restart
-cp _PR1_-1.restart start.inp-_I1_
-tail -n 214 _PR1_-pos-1.xyz > initial-snapshot-_I1_.xyz
-
