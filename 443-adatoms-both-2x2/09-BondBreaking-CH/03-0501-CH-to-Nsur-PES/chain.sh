@@ -2,14 +2,15 @@ currentDir=`pwd`
 projName='TEST'
 cp2kInp='start'
 action=1 # 1-submit, 2-analyze
-atom1=127
+atom1=176
 atom2=211
 natoms=212
+hours=12
 
 intI=0
 nlines=$((natoms+2))
 
-for idist in `seq 3.40 -0.2 0.80`
+for idist in `seq 3.90 -0.3 1.80`
 do
 
  dist=`printf "%04.2f" $idist`
@@ -42,6 +43,6 @@ done
 
 if [ $action == 1 ]
 then
- submit_cp2k.pl -1 80 40 -1 -1 12 00 $projName $cp2kInp.inp $cp2kInp.out $strI 0
+ submit_cp2k.pl -1 80 40 -1 -1 $hours 00 $projName $cp2kInp.inp $cp2kInp.out $strI 0
 fi
 

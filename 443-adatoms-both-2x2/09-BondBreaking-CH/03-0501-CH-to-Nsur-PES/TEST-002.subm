@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --time=12:00:00
+#SBATCH --nodes=2
+#SBATCH --tasks-per-node=40
+#SBATCH --mem=MaxMemPerNode
+#SBATCH --account=ctb-rzk
+#SBATCH --job-name=TEST-002
+#SBATCH --error=_TEST-002.stde
+#SBATCH --output=_TEST-002.stdo
+
+EXE=cp2k.popt
+workd=${SLURM_SUBMIT_DIR}
+cd $workd
+if [ -f "action-pre-002.sh" ]; then
+ bash action-pre-002.sh
+fi
+srun $EXE TEST-1.restart > $workd/start.out-002
+if [ -f "action-post-002.sh" ]; then
+ bash action-post-002.sh
+fi

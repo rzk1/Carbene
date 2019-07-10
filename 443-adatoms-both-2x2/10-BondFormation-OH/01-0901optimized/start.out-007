@@ -1,0 +1,16 @@
+
+ *******************************************************************************
+ *   ___                                                                       *
+ *  /   \                                                                      *
+ * [ABORT]   The specified OLD file <TEST-1.restart> cannot be opened. It does *
+ *  \___/                     not exist. Data directory path:                  *
+ *    |     /home/rzk/projects/def-rzk/group/cp2k/cp2k-mcgill/cp2k-mcgill/cp2k *
+ *  O/|                                    /data                               *
+ * /| |                                                                        *
+ * / \                                                   common/cp_files.F:399 *
+ *******************************************************************************
+
+
+ ===== Routine Calling Stack ===== 
+
+            1 read_input

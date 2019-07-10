@@ -1,0 +1,19 @@
+sed: can't read TEST-1.restart: No such file or directory
+sed: can't read TEST-1.restart: No such file or directory
+cp: cannot stat 'TEST-1.restart': No such file or directory
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 1626033.0 ON blg7129 CANCELLED AT 2019-07-10T10:12:06 ***
+slurmstepd: error: blg7129 [0] pmixp_client_v2.c:203 [_errhandler] mpi/pmix: ERROR: Error handler invoked: status = -25: Success (0)
+slurmstepd: error: blg7130 [1] pmixp_client_v2.c:203 [_errhandler] mpi/pmix: ERROR: Error handler invoked: status = -25: Success (0)
+srun: error: blg7129: task 0: Exited with exit code 1
+srun: error: blg7129: tasks 1-39: Killed
+srun: error: blg7130: tasks 40-79: Killed
+tail: cannot open 'TEST-pos-1.xyz' for reading: No such file or directory
