@@ -1,0 +1,22 @@
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 1796751 ON blg9210 CANCELLED AT 2019-07-18T08:48:19 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 1796751.0 ON blg9210 CANCELLED AT 2019-07-18T08:48:19 DUE TO TIME LIMIT ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          00000000034E315E  for__signal_handl     Unknown  Unknown
+libpthread-2.24.s  00002B88F652DE90  Unknown               Unknown  Unknown
+cp2k.popt          0000000002308128  Unknown               Unknown  Unknown
+cp2k.popt          0000000001B717F4  Unknown               Unknown  Unknown
+cp2k.popt          0000000001B6EC4E  Unknown               Unknown  Unknown
+cp2k.popt          000000000147960A  Unknown               Unknown  Unknown
+cp2k.popt          0000000000ED0982  Unknown               Unknown  Unknown
+cp2k.popt          0000000000A11F51  Unknown               Unknown  Unknown
+cp2k.popt          0000000000A0E24E  Unknown               Unknown  Unknown
+cp2k.popt          00000000013E846F  Unknown               Unknown  Unknown
+cp2k.popt          00000000013E0E66  Unknown               Unknown  Unknown
+cp2k.popt          00000000013D4B5B  Unknown               Unknown  Unknown
+cp2k.popt          0000000000ED9919  Unknown               Unknown  Unknown
+cp2k.popt          0000000001433541  Unknown               Unknown  Unknown
+cp2k.popt          0000000001431921  Unknown               Unknown  Unknown
+cp2k.popt          000000000115CBF1  Unknown               Unknown  Unknown
+cp2k.popt          00000000006FAC42  Unknown               Unknown  Unknown
