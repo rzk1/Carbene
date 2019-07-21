@@ -1,0 +1,20 @@
+
+ *******************************************************************************
+ *   ___                                                                       *
+ *  /   \                                                                      *
+ * [ABORT]                                                                     *
+ *  \___/      MPI error 16 in mpi_bcast @ mp_bcast_i : MPI_ERR_OTHER: known   *
+ *    |                              error not in list                         *
+ *  O/|                                                                        *
+ * /| |                                                                        *
+ * / \                                          mpiwrap/message_passing.F:1109 *
+ *******************************************************************************
+
+
+ ===== Routine Calling Stack ===== 
+
+            5 broadcast_input_information
+            4 parser_read_line_low
+            3 parser_read_line
+            2 section_vals_parse
+            1 read_input
