@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=12:00:00
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --tasks-per-node=40
 #SBATCH --mem=MaxMemPerNode
 #SBATCH --account=ctb-rzk
@@ -14,7 +14,7 @@ cd $workd
 if [ -f "action-pre-001.sh" ]; then
  bash action-pre-001.sh
 fi
-srun $EXE start.inp > $workd/start.out-001
+srun $EXE restart-1.inp > $workd/restart-1.out-001
 if [ -f "action-post-001.sh" ]; then
  bash action-post-001.sh
 fi
