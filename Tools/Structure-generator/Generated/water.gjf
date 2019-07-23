@@ -1,0 +1,11 @@
+%mem=4GB
+%chk=water.chk
+# opt ub3lyp/6-31g(d,p) guess=(core,mix,always)
+
+Title Card Required
+
+0 1
+ O                 -3.35606082   -0.40909090    0.00000000
+ H                 -2.39606082   -0.40909090    0.00000000
+ H                 -3.67651541    0.49584493    0.00000000
+
